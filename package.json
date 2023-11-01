@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "test": "deno test --allow-all .\\supabase\\tests\\*.ts"
+  },
   "devDependencies": {
     "supabase": "^1.110.1"
   }
