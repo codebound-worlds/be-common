@@ -3,11 +3,11 @@
 // Import required libraries and modules
 import {
   assert,
-  assertExists,
+  //assertExists,
   assertEquals,
 } from 'https://deno.land/std@0.192.0/testing/asserts.ts'
 import { createClient, SupabaseClient } from 'https://esm.sh/@supabase/supabase-js@2.23.0'
-import { delay } from 'https://deno.land/x/delay@v0.2.0/mod.ts'
+//import { delay } from 'https://deno.land/x/delay@v0.2.0/mod.ts'
 import "https://deno.land/std@0.204.0/dotenv/load.ts";
 
 // Set up the configuration for the Supabase client
@@ -23,7 +23,7 @@ const options = {
 
 // Test the creation and functionality of the Supabase client
 const testClientCreation = async () => {
-  var client: SupabaseClient = createClient(supabaseUrl, supabaseKey, options)
+  const client: SupabaseClient = createClient(supabaseUrl, supabaseKey, options)
 
   // Verify if the Supabase URL and key are provided
   if (!supabaseUrl) throw new Error('supabaseUrl is required.')
@@ -42,7 +42,7 @@ const testClientCreation = async () => {
 
 // Test the 'hello-world' function
 const testHelloWorld = async () => {
-  var client: SupabaseClient = createClient(supabaseUrl, supabaseKey, options)
+  const client: SupabaseClient = createClient(supabaseUrl, supabaseKey, options)
 
   // Invoke the 'hello-world' function with a parameter
   const { data: func_data, error: func_error } = await client.functions.invoke('hello-world', {
